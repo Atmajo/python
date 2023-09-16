@@ -63,7 +63,7 @@ class Llist:
 
 root = Llist()
 while True:
-    ch=int(input("Enter 1: add last 2: delele last 3: delete first -"))
+    ch=int(input("Enter 1: add last 2: delele last 3: delete first 4: insert anywhere -"))
     if ch == 1:
         n=int(input("Enter a number:"))
         root.addLast(n)
