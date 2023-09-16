@@ -36,6 +36,24 @@ class Llist:
             self.head=start.next
             start=None
 
+    def delAny(self, pos):
+        temp=start=self.head
+        if self.head==None:
+            return
+        else:
+            for i in range(1,pos):
+                temp=start
+                if start:
+                    start=start.next
+            if i==pos and start==None:
+                temp.next=None
+                start=None
+            elif i==pos-1 and start!=None:
+                temp.next=start.next
+                start=None
+            else:
+                print("Invalid Position")
+
     def printList(self):
         start=self.head
         while start:
@@ -53,6 +71,9 @@ while True:
         root.delLast()
     elif ch == 3:
         root.delFirst()
+    elif ch==4:
+        pos=int(input("Enter a position:"))
+        root.delAny(pos)
     else:
         print("Invalid Case")
     root.printList()
