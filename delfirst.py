@@ -28,6 +28,14 @@ class Llist:
         temp.next=None
         start=None
 
+    def delFirst(self):
+        start=self.head
+        if self.head==None:
+            return
+        else:
+            self.head=start.next
+            start=None
+
     def printList(self):
         start=self.head
         while start:
@@ -37,12 +45,14 @@ class Llist:
 
 root = Llist()
 while True:
-    ch=int(input("Enter 1: add last 2: delele last -"))
+    ch=int(input("Enter 1: add last 2: delele last 3: delete first -"))
     if ch == 1:
         n=int(input("Enter a number:"))
         root.addLast(n)
     elif ch == 2:
         root.delLast()
+    elif ch == 3:
+        root.delFirst()
     else:
         print("Invalid Case")
     root.printList()
