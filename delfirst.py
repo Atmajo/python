@@ -54,6 +54,24 @@ class Llist:
             else:
                 print("Invalid Position")
 
+    def insAny(self, val, pos):
+        nw=Node(val)
+        if self.head==None:
+            self.head=nw
+        else:
+            temp=start=self.head
+            for i in range(1,pos):
+                temp=start
+                if start:
+                    start=start.next
+            if i==pos and start==None:
+                start.next=nw
+            elif i==pos-1 and start!=None:
+                temp.next=nw
+                nw.next=start
+            else:
+                print("Invalid Position")
+
     def printList(self):
         start=self.head
         while start:
