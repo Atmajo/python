@@ -81,7 +81,7 @@ class Llist:
 
 root = Llist()
 while True:
-    ch=int(input("Enter 1: add last 2: delele last 3: delete first 4: insert anywhere -"))
+    ch=int(input("Enter 1: add last 2: delele last 3: delete first 4: delete anywhere 5: insert anywhere -"))
     if ch == 1:
         n=int(input("Enter a number:"))
         root.addLast(n)
@@ -92,6 +92,10 @@ while True:
     elif ch==4:
         pos=int(input("Enter a position:"))
         root.delAny(pos)
+    elif ch==5:
+        pos=int(input("Enter a position:"))
+        val=int(input("Enter a value:"))
+        root.insAny(val, pos)
     else:
         print("Invalid Case")
     root.printList()
