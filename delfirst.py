@@ -56,7 +56,7 @@ class Llist:
 
     def insAny(self, val, pos):
         nw=Node(val)
-        if self.head==None:
+        if self.head is None:
             self.head=nw
         else:
             temp=start=self.head
@@ -65,9 +65,9 @@ class Llist:
                 if start:
                     start=start.next
             if i==pos and start==None:
-                start.next=nw
+                start.next=nw.next
             elif i==pos-1 and start!=None:
-                temp.next=nw
+                temp.next=nw.next
                 nw.next=start
             else:
                 print("Invalid Position")
